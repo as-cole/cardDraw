@@ -1,0 +1,106 @@
+
+html {
+  display: flex;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Arial, Sans-serif;
+}
+
+body {
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+}
+
+div {
+  display:flex;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 600;
+  border: 0;
+}
+
+.content-wrapper {
+  width: 100%;
+  flex-direction: column;
+}
+
+.title-wrapper {
+  /* width: 100%; */
+  padding: 20px;
+}
+
+.title {
+  font-size: 40px;
+}
+
+.buttons-wrapper {
+  display: block;
+  padding: 20px 0px;
+}
+
+.button-wrapper {
+  display:inline-block;
+}
+.output-wrapper {
+  display: block;
+  margin: auto;
+}
+
+.row {
+  flex-direction: row;
+  margin: auto;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.card-top {
+  margin: 10px 0px 0px 10px;
+}
+
+.card-bottom {
+  margin: 0px 10px 10px 115px;
+}
+.card-middle {
+  height: 60px;
+}
+
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
+}
+
+#output-card {
+  height: 200px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.hide {
+  display:none;
+}
+.card-icon {
+  /* border:1px solid black;
+  width: 20px;
+  height: 20px; */
+  font-size: 40px;
+}
+
+#card-center {
+  /* border: 1px solid black;
+  width: 50px;
+  height: 50px; */
+  font-size: 50px;
+}
