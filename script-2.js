@@ -7,16 +7,17 @@ window.onload = function(){
       spades: [],
       hearts: [],
       clubs: [],
-      diamonds: []
+      diamonds: [],
+      jokers: ['Joker','Joker']
     };
     discard = {
       spades: [],
       hearts: [],
       clubs: [],
-      diamonds: []
+      diamonds: [],
+      jokers: ['Joker','Joker']
     };
     cards = [];
-    // cards.push('Joker');
     for(var i = 2; i < 11; i++) {
       cards.push(i.toString());
     }
@@ -32,7 +33,7 @@ window.onload = function(){
   reset();
 
 
-
+  // Add event listeners for buttons
   document.getElementById('draw-button').addEventListener('click', function(e) {drawCard()});
   document.getElementById('reset-button').addEventListener('click', function(e) {reset()});
 
@@ -49,12 +50,20 @@ window.onload = function(){
       // Choose card from Suit
       let cards = draw[keys[suitInd]];
       card = cards[Math.floor(Math.random()*cards.length)];
-      // Output Card info
-      output = card + ' of ' + suit;
+      // Set Output = Card info
+      if (card == 'Joker') {
+        output = card;
+      } else {
+          output = card + ' of ' + suit;
+      }
       // Add Card to Discard Object
       discard[keys[suitInd]].push(card);
       // Remove Card from Draw Pile
-      draw[keys[suitInd]] = draw[keys[suitInd]].filter(el => el !== card);
+      if (keys[suitInd] == 'jokers') {
+        draw[keys[suitInd]].pop();
+      } else {
+        draw[keys[suitInd]] = draw[keys[suitInd]].filter(el => el !== card);
+      }
       // Update keys array for any empty suits
       for (let i = 0; i < keys.length; i++) {
         let suit = keys[i];
@@ -90,15 +99,19 @@ window.onload = function(){
       case 'diamonds':
         icon = '&#9830';
         color = 'red';
+        break;
+      case 'jokers':
+        icon = 'J';
+        color = 'black';
     };
-
+    // Insert and style Icons
     icons.forEach(e => {
       e.innerHTML = icon;
       e.classList.remove('black');
       e.classList.remove('red');
       e.classList.add(color);
     });
-    // Insert Text
+    // Insert and Style Text
     center.classList.remove('black');
     center.classList.remove('red');
     center.classList.add(color);
