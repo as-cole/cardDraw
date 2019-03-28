@@ -93,6 +93,16 @@ button:hover {
   display:none;
 }
 
+@keyframes card-size {
+  from {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.3)
+  };
+  to {
+    transform: scale(1);
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0)
+  };
+}
 
 #output-card {
   height: 200px;
@@ -104,6 +114,10 @@ button:hover {
   background-color: #FFF;
 }
 
+.card-animation {
+  animation-name: card-size;
+  animation-duration: .5s;
+}
 
 #card-center {
   font-size: 50px;

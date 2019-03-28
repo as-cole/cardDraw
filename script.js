@@ -85,6 +85,7 @@ window.onload = function(){
     let color = 'black';
     let icons = document.querySelectorAll('.card-icon');
     let center = document.getElementById('card-center');
+    let playingCard = document.getElementById('output-card');
     switch(suit) {
       case 'spades':
         icon = '&#9824';
@@ -116,5 +117,8 @@ window.onload = function(){
     center.classList.remove('red');
     center.classList.add(color);
     center.innerHTML = card;
+    // Add and remove animation class to card;
+    playingCard.classList.add('card-animation');
+    setTimeout(() => {playingCard.classList.remove('card-animation')}, 500);
   }
 }
